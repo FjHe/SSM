@@ -8,6 +8,7 @@ import user from './views/nav1/user.vue'
 import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 import echarts from './views/charts/echarts.vue'
+import AJLB from './views/ajlb/AJLB'
 
 let routes = [
     {
@@ -22,7 +23,15 @@ let routes = [
         name: '',
         hidden: true
     },
-    //{ path: '/main', component: Main },
+    {
+        path: '/',
+        component: Home,
+        name: '案件查询',
+        iconCls : "el-icon-date",
+        children : [
+            { path :'/ajlb', component : AJLB ,name:'类别查询'  }
+        ]
+    },
     {
         path: '/',
         component: Home,

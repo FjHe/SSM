@@ -1,6 +1,9 @@
 <template>
     <section class="chart-container">
         <el-row>
+            <el-row :span="24">
+                <p>{{message}}</p>
+            </el-row>
             <el-col :span="12">
                 <div id="chartColumn" style="width:100%; height:400px;"></div>
             </el-col>
@@ -24,8 +27,13 @@
     import echarts from 'echarts'
 
     export default {
+        name: 'AjRes',
+
+        props:['message'],
+
         data() {
             return {
+                propstest : 'hfjbeichuangfuolaile',
                 chartColumn: null,
                 chartBar: null,
                 chartLine: null,
@@ -192,20 +200,8 @@
         },
 
         mounted: function () {
-
-            console.log(this.hfjtest);
-            this.hfjtest = 222 ;
-            console.log(this.hfjtest);
-
-            this.$http.get( '/hfj/test',{ 'artifactid' : 'Summary'},{emulateJSON: true}).then(response => {
-                // get body data
-                console.log(response.body);
-
-            },response =>{
-
-            })
-            this.drawCharts();
-
+           this.drawCharts();
+           this.$emit('getDataFromEc',this.propstest)
         },
         updated: function () {
             this.drawCharts()

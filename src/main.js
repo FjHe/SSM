@@ -9,6 +9,7 @@ import store from './vuex/store'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
 import Common from './common/js/util'
+
 //import NProgress from 'nprogress'
 //import 'nprogress/nprogress.css'
 import routes from './routes'

@@ -29,7 +29,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/hfj':{
-            target:'http://202.121.180.124:8080/gis',
+            target:'http://127.0.0.1:8080/test',
             changeOrigin:true,
             pathRewrite:{
                 '^/hfj':''
